@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "228d2f2687e826955a8370b21ff140f1",
+    "content-hash": "c034a5d71996743a49d692488e1cc6a1",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -3206,6 +3206,77 @@
                 "shell"
             ],
             "time": "2018-10-13T15:16:03+00:00"
+        },
+        {
+            "name": "qirolab/laravel-themer",
+            "version": "1.4.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/qirolab/laravel-themer.git",
+                "reference": "926f1fbcf17465575c976b5775ff186e69a6e85b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/qirolab/laravel-themer/zipball/926f1fbcf17465575c976b5775ff186e69a6e85b",
+                "reference": "926f1fbcf17465575c976b5775ff186e69a6e85b",
+                "shasum": ""
+            },
+            "require": {
+                "facade/ignition-contracts": "^1.0",
+                "illuminate/support": "~5.8|^6.0|^7.0|^8.0",
+                "php": ">=7.1.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.16",
+                "orchestra/testbench": "~3.8.0|^4.0|^5.0|^6.0",
+                "phpunit/phpunit": "^8.3|^9.0",
+                "vimeo/psalm": "^4.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Qirolab\\Theme\\ThemeServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Qirolab\\Theme\\": "src",
+                    "Qirolab\\Theme\\Database\\Factories\\": "database/factories"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Harish Kumar",
+                    "email": "harish@qirolab.com",
+                    "homepage": "https://qirolab.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A Laravel theme manager, that will help you organize and maintain your themes inside Laravel projects.",
+            "homepage": "https://qirolab.com",
+            "keywords": [
+                "laravel",
+                "laravel-theme",
+                "qirolab",
+                "theme"
+            ],
+            "support": {
+                "issues": "https://github.com/qirolab/laravel-themer/issues",
+                "source": "https://github.com/qirolab/laravel-themer/tree/1.4.4"
+            },
+            "funding": [
+                {
+                    "url": "https://www.buymeacoffee.com/qirolab",
+                    "type": "other"
+                }
+            ],
+            "time": "2021-02-19T19:06:46+00:00"
         },
         {
             "name": "ralouphie/getallheaders",
@@ -6790,5 +6861,6 @@
     "platform": {
         "php": ">=7.0.0"
     },
-    "platform-dev": []
+    "platform-dev": [],
+    "plugin-api-version": "2.3.0"
 }
