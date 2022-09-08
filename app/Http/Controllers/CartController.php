@@ -9,6 +9,10 @@ use Illuminate\Support\Facades\Validator;
 
 class CartController extends Controller
 {
+    // TODO: add product enter wishlist
+    // for menu-right.blade.php
+
+    
     /**
      * Display a listing of the resource.
      *
