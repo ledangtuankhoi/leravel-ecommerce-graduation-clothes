@@ -48,6 +48,12 @@ Route::middleware('auth')->group(function () {
 });
 
 
+
+
+
+
+
+
 // route default test
 
 // Example 2: set theme for a route-group

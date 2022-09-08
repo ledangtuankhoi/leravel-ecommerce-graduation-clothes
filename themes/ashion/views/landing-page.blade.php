@@ -62,45 +62,17 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-xl-3 col-lg-2">
-                    <div class="header__logo">
-                        <a href="./index.html"><img src="{{ asset('themes/ashion//img/logo.png') }}" alt=""></a>
-                    </div>
+                    @include('partials.logo')
                 </div>
                 <div class="col-xl-6 col-lg-7">
-                    <nav class="header__menu">
-                        <ul>
-                            <li class="active"><a href="./index.html">Home</a></li>
-                            <li><a href="#">Women’s</a></li>
-                            <li><a href="#">Men’s</a></li>
-                            <li><a href="./shop.html">Shop</a></li>
-                            <li><a href="#">Pages</a>
-                                <ul class="dropdown">
-                                    <li><a href="./product-details.html">Product Details</a></li>
-                                    <li><a href="./shop-cart.html">Shop Cart</a></li>
-                                    <li><a href="./checkout.html">Checkout</a></li>
-                                    <li><a href="./blog-details.html">Blog Details</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="./blog.html">Blog</a></li>
-                            <li><a href="./contact.html">Contact</a></li>
-                        </ul>
-                    </nav>
+                    @include('partials.menus.menu-center', [
+                        'categories' => $categories,
+                    ])
+
                 </div>
                 <div class="col-lg-3">
                     <div class="header__right">
-                        <div class="header__right__auth">
-                            <a href="#">Login</a>
-                            <a href="#">Register</a>
-                        </div>
-                        <ul class="header__right__widget">
-                            <li><span class="icon_search search-switch"></span></li>
-                            <li><a href="#"><span class="icon_heart_alt"></span>
-                                    <div class="tip">2</div>
-                                </a></li>
-                            <li><a href="#"><span class="icon_bag_alt"></span>
-                                    <div class="tip">2</div>
-                                </a></li>
-                        </ul>
+                        @include('partials.menus.menu-right')
                     </div>
                 </div>
             </div>
@@ -129,7 +101,8 @@
                 <div class="col-lg-6">
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-6 p-0">
-                            <div class="categories__item set-bg" data-setbg="{{ asset('themes/ashion//img/categories/category-2.jpg') }}">
+                            <div class="categories__item set-bg"
+                                data-setbg="{{ asset('themes/ashion//img/categories/category-2.jpg') }}">
                                 <div class="categories__text">
                                     <h4>Men’s fashion</h4>
                                     <p>358 items</p>
@@ -138,7 +111,8 @@
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6 p-0">
-                            <div class="categories__item set-bg" data-setbg="{{ asset('themes/ashion//img/categories/category-3.jpg') }}">
+                            <div class="categories__item set-bg"
+                                data-setbg="{{ asset('themes/ashion//img/categories/category-3.jpg') }}">
                                 <div class="categories__text">
                                     <h4>Kid’s fashion</h4>
                                     <p>273 items</p>
@@ -147,7 +121,8 @@
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6 p-0">
-                            <div class="categories__item set-bg" data-setbg="{{ asset('themes/ashion//img/categories/category-4.jpg') }}">
+                            <div class="categories__item set-bg"
+                                data-setbg="{{ asset('themes/ashion//img/categories/category-4.jpg') }}">
                                 <div class="categories__text">
                                     <h4>Cosmetics</h4>
                                     <p>159 items</p>
@@ -156,7 +131,8 @@
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6 p-0">
-                            <div class="categories__item set-bg" data-setbg="{{ asset('themes/ashion//img/categories/category-5.jpg') }}">
+                            <div class="categories__item set-bg"
+                                data-setbg="{{ asset('themes/ashion//img/categories/category-5.jpg') }}">
                                 <div class="categories__text">
                                     <h4>Accessories</h4>
                                     <p>792 items</p>
@@ -194,7 +170,8 @@
             <div class="row property__gallery">
                 <div class="col-lg-3 col-md-4 col-sm-6 mix women">
                     <div class="product__item">
-                        <div class="product__item__pic set-bg" data-setbg="{{ asset('themes/ashion//img/product/product-1.jpg') }}">
+                        <div class="product__item__pic set-bg"
+                            data-setbg="{{ asset('themes/ashion//img/product/product-1.jpg') }}">
                             <div class="label new">New</div>
                             <ul class="product__hover">
                                 <li><a href="img/product/product-1.jpg" class="image-popup"><span
@@ -218,7 +195,8 @@
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-6 mix men">
                     <div class="product__item">
-                        <div class="product__item__pic set-bg" data-setbg="{{ asset('themes/ashion//img/product/product-2.jpg') }}">
+                        <div class="product__item__pic set-bg"
+                            data-setbg="{{ asset('themes/ashion//img/product/product-2.jpg') }}">
                             <ul class="product__hover">
                                 <li><a href="img/product/product-2.jpg" class="image-popup"><span
                                             class="arrow_expand"></span></a></li>
@@ -241,7 +219,8 @@
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-6 mix accessories">
                     <div class="product__item">
-                        <div class="product__item__pic set-bg" data-setbg="{{ asset('themes/ashion//img/product/product-3.jpg') }}">
+                        <div class="product__item__pic set-bg"
+                            data-setbg="{{ asset('themes/ashion//img/product/product-3.jpg') }}">
                             <div class="label stockout">out of stock</div>
                             <ul class="product__hover">
                                 <li><a href="img/product/product-3.jpg" class="image-popup"><span
@@ -265,7 +244,8 @@
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-6 mix cosmetic">
                     <div class="product__item">
-                        <div class="product__item__pic set-bg" data-setbg="{{ asset('themes/ashion//img/product/product-4.jpg') }}">
+                        <div class="product__item__pic set-bg"
+                            data-setbg="{{ asset('themes/ashion//img/product/product-4.jpg') }}">
                             <ul class="product__hover">
                                 <li><a href="img/product/product-4.jpg" class="image-popup"><span
                                             class="arrow_expand"></span></a></li>
@@ -288,7 +268,8 @@
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-6 mix kid">
                     <div class="product__item">
-                        <div class="product__item__pic set-bg" data-setbg="{{ asset('themes/ashion//img/product/product-5.jpg') }}">
+                        <div class="product__item__pic set-bg"
+                            data-setbg="{{ asset('themes/ashion//img/product/product-5.jpg') }}">
                             <ul class="product__hover">
                                 <li><a href="img/product/product-5.jpg" class="image-popup"><span
                                             class="arrow_expand"></span></a></li>
@@ -311,7 +292,8 @@
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-6 mix women men kid accessories cosmetic">
                     <div class="product__item sale">
-                        <div class="product__item__pic set-bg" data-setbg="{{ asset('themes/ashion//img/product/product-6.jpg') }}">
+                        <div class="product__item__pic set-bg"
+                            data-setbg="{{ asset('themes/ashion//img/product/product-6.jpg') }}">
                             <div class="label sale">Sale</div>
                             <ul class="product__hover">
                                 <li><a href="img/product/product-6.jpg" class="image-popup"><span
@@ -335,7 +317,8 @@
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-6 mix women men kid accessories cosmetic">
                     <div class="product__item">
-                        <div class="product__item__pic set-bg" data-setbg="{{ asset('themes/ashion//img/product/product-7.jpg') }}">
+                        <div class="product__item__pic set-bg"
+                            data-setbg="{{ asset('themes/ashion//img/product/product-7.jpg') }}">
                             <ul class="product__hover">
                                 <li><a href="img/product/product-7.jpg" class="image-popup"><span
                                             class="arrow_expand"></span></a></li>
@@ -358,7 +341,8 @@
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-6 mix women men kid accessories cosmetic">
                     <div class="product__item sale">
-                        <div class="product__item__pic set-bg" data-setbg="{{ asset('themes/ashion//img/product/product-8.jpg') }}">
+                        <div class="product__item__pic set-bg"
+                            data-setbg="{{ asset('themes/ashion//img/product/product-8.jpg') }}">
                             <div class="label">Sale</div>
                             <ul class="product__hover">
                                 <li><a href="img/product/product-8.jpg" class="image-popup"><span
@@ -677,7 +661,8 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-2 col-md-4 col-sm-4 p-0">
-                    <div class="instagram__item set-bg" data-setbg="{{ asset('themes/ashion//img/instagram/insta-1.jpg') }}">
+                    <div class="instagram__item set-bg"
+                        data-setbg="{{ asset('themes/ashion//img/instagram/insta-1.jpg') }}">
                         <div class="instagram__text">
                             <i class="fa fa-instagram"></i>
                             <a href="#">@ ashion_shop</a>
@@ -685,7 +670,8 @@
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-4 col-sm-4 p-0">
-                    <div class="instagram__item set-bg" data-setbg="{{ asset('themes/ashion//img/instagram/insta-2.jpg') }}">
+                    <div class="instagram__item set-bg"
+                        data-setbg="{{ asset('themes/ashion//img/instagram/insta-2.jpg') }}">
                         <div class="instagram__text">
                             <i class="fa fa-instagram"></i>
                             <a href="#">@ ashion_shop</a>
@@ -693,7 +679,8 @@
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-4 col-sm-4 p-0">
-                    <div class="instagram__item set-bg" data-setbg="{{ asset('themes/ashion//img/instagram/insta-3.jpg') }}">
+                    <div class="instagram__item set-bg"
+                        data-setbg="{{ asset('themes/ashion//img/instagram/insta-3.jpg') }}">
                         <div class="instagram__text">
                             <i class="fa fa-instagram"></i>
                             <a href="#">@ ashion_shop</a>
@@ -701,7 +688,8 @@
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-4 col-sm-4 p-0">
-                    <div class="instagram__item set-bg" data-setbg="{{ asset('themes/ashion//img/instagram/insta-4.jpg') }}">
+                    <div class="instagram__item set-bg"
+                        data-setbg="{{ asset('themes/ashion//img/instagram/insta-4.jpg') }}">
                         <div class="instagram__text">
                             <i class="fa fa-instagram"></i>
                             <a href="#">@ ashion_shop</a>
@@ -709,7 +697,8 @@
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-4 col-sm-4 p-0">
-                    <div class="instagram__item set-bg" data-setbg="{{ asset('themes/ashion//img/instagram/insta-5.jpg') }}">
+                    <div class="instagram__item set-bg"
+                        data-setbg="{{ asset('themes/ashion//img/instagram/insta-5.jpg') }}">
                         <div class="instagram__text">
                             <i class="fa fa-instagram"></i>
                             <a href="#">@ ashion_shop</a>
@@ -717,7 +706,8 @@
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-4 col-sm-4 p-0">
-                    <div class="instagram__item set-bg" data-setbg="{{ asset('themes/ashion//img/instagram/insta-6.jpg') }}">
+                    <div class="instagram__item set-bg"
+                        data-setbg="{{ asset('themes/ashion//img/instagram/insta-6.jpg') }}">
                         <div class="instagram__text">
                             <i class="fa fa-instagram"></i>
                             <a href="#">@ ashion_shop</a>
@@ -824,17 +814,17 @@
     </div>
     <!-- Search End -->
 
-<!-- Js Plugins -->
-<script src="{{ asset('themes/ashion/js/jquery-3.3.1.min.js') }}"></script>
-<script src="{{ asset('themes/ashion/js/bootstrap.min.js') }}"></script>
-<script src="{{ asset('themes/ashion/js/jquery.magnific-popup.min.js') }}"></script>
-<script src="{{ asset('themes/ashion/js/jquery-ui.min.js') }}"></script>
-<script src="{{ asset('themes/ashion/js/mixitup.min.js') }}"></script>
-<script src="{{ asset('themes/ashion/js/jquery.countdown.min.js') }}"></script>
-<script src="{{ asset('themes/ashion/js/jquery.slicknav.js') }}"></script>
-<script src="{{ asset('themes/ashion/js/owl.carousel.min.js') }}"></script>
-<script src="{{ asset('themes/ashion/js/jquery.nicescroll.min.js') }}"></script>
-<script src="{{ asset('themes/ashion/js/main.js') }}"></script>
+    <!-- Js Plugins -->
+    <script src="{{ asset('themes/ashion/js/jquery-3.3.1.min.js') }}"></script>
+    <script src="{{ asset('themes/ashion/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('themes/ashion/js/jquery.magnific-popup.min.js') }}"></script>
+    <script src="{{ asset('themes/ashion/js/jquery-ui.min.js') }}"></script>
+    <script src="{{ asset('themes/ashion/js/mixitup.min.js') }}"></script>
+    <script src="{{ asset('themes/ashion/js/jquery.countdown.min.js') }}"></script>
+    <script src="{{ asset('themes/ashion/js/jquery.slicknav.js') }}"></script>
+    <script src="{{ asset('themes/ashion/js/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('themes/ashion/js/jquery.nicescroll.min.js') }}"></script>
+    <script src="{{ asset('themes/ashion/js/main.js') }}"></script>
 
 </body>
 

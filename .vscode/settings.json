@@ -1,0 +1,6 @@
+{
+    "todo-tree.tree.scanMode": "workspace",
+    "workbench.colorCustomizations": {
+        "statusBar.debuggingBackground": "#ff4800"
+    }
+}
