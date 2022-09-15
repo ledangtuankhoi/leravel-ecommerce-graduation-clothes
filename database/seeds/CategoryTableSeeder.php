@@ -14,15 +14,32 @@ class CategoryTableSeeder extends Seeder
     public function run()
     {
         $now = Carbon::now()->toDateTimeString();
+        $nameCate = [
+            'laptop', 'desktop', 'mobile', 'tablet', 'tv', 'digital-camera',
+            'appliance'
+        ];
+        $loremString = 'In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.;';
 
-        Category::insert([
-            ['name' => 'Laptops', 'slug' => 'laptops', 'created_at' => $now, 'updated_at' => $now],
-            ['name' => 'Desktops', 'slug' => 'desktops', 'created_at' => $now, 'updated_at' => $now],
-            ['name' => 'Mobile Phones', 'slug' => 'mobile-phones', 'created_at' => $now, 'updated_at' => $now],
-            ['name' => 'Tablets', 'slug' => 'tablets', 'created_at' => $now, 'updated_at' => $now],
-            ['name' => 'TVs', 'slug' => 'tvs', 'created_at' => $now, 'updated_at' => $now],
-            ['name' => 'Digital Cameras', 'slug' => 'digital-cameras', 'created_at' => $now, 'updated_at' => $now],
-            ['name' => 'Appliances', 'slug' => 'appliances', 'created_at' => $now, 'updated_at' => $now],
-        ]);
+
+        // $ar = array('''')
+        for ($i = 0; $i < 7; $i++) {
+            Category::insert([
+                [
+                    'description' => 'description ' . $loremString,
+                    'image' => 'categories/dummy/category-' . ($i + 1) . '.jpg',
+                    'images' =>
+                    "['products\/dummy\/" . $nameCate[$i] . "-1.jpg', 
+                    'products\/dummy\/" . $nameCate[$i] . "-2.jpg', 
+                    'products\/dummy\/" . $nameCate[$i] . "-3.jpg', 
+                    'products\/dummy\/" . $nameCate[$i] . "-4.jpg', 
+                    'products\/dummy\/" . $nameCate[$i] . "-5.jpg']",
+                    'name' => '' . ucfirst($nameCate[$i]) . 's',
+                    'slug' => '' . $nameCate[$i] . 's',
+                    'created_at' => $now,
+                    'updated_at' => $now
+                ]
+            ]);
+        }
+ 
     }
 }
