@@ -23,7 +23,9 @@
         "sass": "^1.32.1",
         "sass-loader": "^10.1.1",
         "vue": "^2.6.10",
-        "vue-template-compiler": "^2.6.10"
+        "vue-template-compiler": "^2.6.10",
+        "@prettier/plugin-php": "0.14.3",
+        "prettier": "2.0.5"
     },
     "dependencies": {
         "browser-sync": "^2.26.7",

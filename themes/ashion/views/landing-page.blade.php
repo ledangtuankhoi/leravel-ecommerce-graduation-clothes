@@ -33,58 +33,13 @@
         <div class="loader"></div>
     </div>
 
-    <!-- Offcanvas Menu Begin -->
-    <div class="offcanvas-menu-overlay"></div>
-    <div class="offcanvas-menu-wrapper">
-        <div class="offcanvas__close">+</div>
-        <ul class="offcanvas__widget">
-            <li><span class="icon_search search-switch"></span></li>
-            <li><a href="#"><span class="icon_heart_alt"></span>
-                    <div class="tip">2</div>
-                </a></li>
-            <li><a href="#"><span class="icon_bag_alt"></span>
-                    <div class="tip">2</div>
-                </a></li>
-        </ul>
-        <div class="offcanvas__logo">
-            <a href="./index.html"><img src="{{ asset('themes/ashion//img/logo.png') }}" alt=""></a>
-        </div>
-        <div id="mobile-menu-wrap"></div>
-        <div class="offcanvas__auth">
-            <a href="#">Login</a>
-            <a href="#">Register</a>
-        </div>
-    </div>
-    <!-- Offcanvas Menu End -->
 
     <!-- Header Section Begin -->
-    <header class="header">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-xl-3 col-lg-2">
-                    @include('partials.logo')
-                </div>
-                <div class="col-xl-6 col-lg-7">
-                    @include('partials.menus.menu-center', [
-                        'categories' => $categories,
-                    ])
-
-                </div>
-                <div class="col-lg-3">
-                    <div class="header__right">
-                        @include('partials.menus.menu-right')
-                    </div>
-                </div>
-            </div>
-            <div class="canvas__open">
-                <i class="fa fa-bars"></i>
-            </div>
-        </div>
-    </header>
+    @include('partials.header')
     <!-- Header Section End -->
 
     <!-- Categories Section Begin -->
-    @include('banner')
+    @include('category')
     <!-- Categories Section End -->
 
     <!-- Product Section Begin -->
@@ -317,25 +272,54 @@
                     <div class="banner__slider owl-carousel">
                         <div class="banner__item">
                             <div class="banner__text">
-                                <span>The Chloe Collection</span>
+                                <span>1</span>
                                 <h1>The Project Jacket</h1>
                                 <a href="#">Shop now</a>
                             </div>
                         </div>
                         <div class="banner__item">
                             <div class="banner__text">
-                                <span>The Chloe Collection</span>
+                                <span>2</span>
                                 <h1>The Project Jacket</h1>
                                 <a href="#">Shop now</a>
                             </div>
                         </div>
                         <div class="banner__item">
                             <div class="banner__text">
-                                <span>The Chloe Collection</span>
+                                <span>3</span>
                                 <h1>The Project Jacket</h1>
                                 <a href="#">Shop now</a>
                             </div>
                         </div>
+                        <div class="banner__item">
+                            <div class="banner__text">
+                                <span>4</span>
+                                <h1>The Project Jacket</h1>
+                                <a href="#">Shop now</a>
+                            </div>
+                        </div>
+                        <div class="banner__item">
+                            <!-- <div class="banner__text">
+                                <span>5</span>
+                                <h1>The Project Jacket</h1>
+                                <a href="#">Shop now</a>
+                            </div> -->
+                        </div>
+                        <div class="banner__item">
+                            <div class="banner__text">
+                                <span>6</span>
+                                <h1>The Project Jacket</h1>
+                                <a href="#">Shop now</a>
+                            </div>
+                        </div>
+                        <div class="banner__item">
+                            <div class="banner__text">
+                                <span>7</span>
+                                <h1>The Project Jacket</h1>
+                                <a href="#">Shop now</a>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>

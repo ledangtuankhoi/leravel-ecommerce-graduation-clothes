@@ -269,7 +269,7 @@ ol {
 	height: 100%;
 	left: 0;
 	top: 0;
-	background: #ffffff;
+	background: rgba(255, 255, 255, 0.9);
 	z-index: 99999;
 }
 
@@ -283,7 +283,7 @@ ol {
 	border: none;
 	border-bottom: 2px solid #dddddd;
 	background: 0 0;
-	color: #999;
+	color: rgb(0, 0, 0);
 }
 
 .search-close-switch {

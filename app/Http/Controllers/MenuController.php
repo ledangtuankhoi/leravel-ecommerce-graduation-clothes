@@ -23,7 +23,7 @@ class MenuController extends Controller
      *
      * @return array 
      */
-    public static function CategoryByBestSeller($typeOrderBy = 'DESC', $limit = 4)
+    public static function CategoryByBestSeller($typeOrderBy = 'DESC', $limit = 3)
     {
 
         $bestSaller = DB::table('category_product')
@@ -55,7 +55,7 @@ class MenuController extends Controller
         }
 
         $bestSaller = $bestSaller->get()->toArray();
-        $bestSaller = array_merge($bestSaller,$temp);
+        $bestSaller = array_merge($bestSaller, $temp);
 
         return $bestSaller;
     }

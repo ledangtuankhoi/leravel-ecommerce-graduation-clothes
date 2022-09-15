@@ -18,19 +18,21 @@ class ShopController extends Controller
         $pagination = 9;
         $categories = Category::all();
 
-        if (request()->category) {
+        // có parameter là category thì sẽ hiện theo category
+        // request()->c lấy parameter trong request
+        if (request()->c) { //'c' is category 
             $products = Product::with('categories')->whereHas('categories', function ($query) {
-                $query->where('slug', request()->category);
+                $query->where('slug', request()->c);
             });
-            $categoryName = optional($categories->where('slug', request()->category)->first())->name;
+            $categoryName = optional($categories->where('slug', request()->c)->first())->name;
         } else {
             $products = Product::where('featured', true);
             $categoryName = 'Featured';
         }
 
-        if (request()->sort == 'low_high') {
+        if (request()->s == 'low_high') { // 's' is sort
             $products = $products->orderBy('price')->paginate($pagination);
-        } elseif (request()->sort == 'high_low') {
+        } elseif (request()->s == 'high_low') {
             $products = $products->orderBy('price', 'desc')->paginate($pagination);
         } else {
             $products = $products->paginate($pagination);

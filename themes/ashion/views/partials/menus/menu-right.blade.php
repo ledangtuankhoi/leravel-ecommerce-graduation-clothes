@@ -7,7 +7,7 @@
 @else
     <div class="header__right__auth">
         <a href="{{ route('users.edit') }}">My Account</a>
-        <a href="{{ route('register') }}"
+        <a href="{{ route('logout') }}"
             onclick="event.preventDefault();
                  document.getElementById('logout-form').submit();">Logout</a>
     </div>
@@ -19,8 +19,8 @@
 
 <ul class="header__right__widget">
     <li><span class="icon_search search-switch"></span></li>
-    {{-- TODO: wish list cart--}}
-    
+    {{-- TODO: wish list cart --}}
+
     <li>
         <a href="#"><span class="icon_heart_alt"></span>
             <div class="tip">2</div>
@@ -34,3 +34,4 @@
         </a>
     </li>
 </ul>
+

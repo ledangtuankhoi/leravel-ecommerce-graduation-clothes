@@ -1,3 +1,6 @@
+@php
+    $bestSallerCategory = App\Http\Controllers\MenuController::CategoryByBestSeller();
+@endphp
 <!-- Categories Section Begin -->
 <section class="categories">
     <div class="container-fluid">
