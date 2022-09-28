@@ -1,63 +1,40 @@
 @php
-    $bestSallerCategory = App\Http\Controllers\MenuController::CategoryByBestSeller();
-@endphp
-<!-- Categories Section Begin -->
-<section class="categories">
+ $categories = App\Http\Controllers\BlockPageController::BlockCategory();
+ dump($categories[0]['name']);
+// error_log($cates);
+@endphp 
+
+
+ <!-- Categories Section Begin -->
+ <section class="categories">
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-6 p-0">
                 <div class="categories__item categories__large__item set-bg"
                     data-setbg="{{ asset('themes/ashion//img/categories/category-1.jpg') }}">
                     <div class="categories__text">
-                        <h1>Women’s fashion</h1>
-                        <p>Sitamet, consectetur adipiscing elit, sed do eiusmod tempor incidid-unt labore
-                            edolore magna aliquapendisse ultrices gravida.</p>
-                        <a href="#">Shop now</a>
+                        <h1>{{ $categories[0]['name'] }}</h1>
+                        <p>{{$categories[0]['description']}}</p>
+                        <a href="{{ route('shop.index', ['category' => $categories[0]['slug']]) }}">Shop now</a>
                     </div>
                 </div>
             </div>
             <div class="col-lg-6">
                 <div class="row">
+                    @for($i = 1; $i < count($categories); $i++)
+                        
                     <div class="col-lg-6 col-md-6 col-sm-6 p-0">
                         <div class="categories__item set-bg"
                             data-setbg="{{ asset('themes/ashion//img/categories/category-2.jpg') }}">
                             <div class="categories__text">
-                                <h4>Men’s fashion</h4>
-                                <p>358 items</p>
-                                <a href="#">Shop now</a>
+                                <h4>{{ $categories[$i]['name'] }}</h4>
+                                <p>{{ $categories[$i]['product_count'] }}</p>
+                                <a href="{{ route('shop.index', ['category' => $categories[$i]['slug']]) }}">Shop now</a>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6 p-0">
-                        <div class="categories__item set-bg"
-                            data-setbg="{{ asset('themes/ashion//img/categories/category-3.jpg') }}">
-                            <div class="categories__text">
-                                <h4>Kid’s fashion</h4>
-                                <p>273 items</p>
-                                <a href="#">Shop now</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6 p-0">
-                        <div class="categories__item set-bg"
-                            data-setbg="{{ asset('themes/ashion//img/categories/category-4.jpg') }}">
-                            <div class="categories__text">
-                                <h4>Cosmetics</h4>
-                                <p>159 items</p>
-                                <a href="#">Shop now</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6 p-0">
-                        <div class="categories__item set-bg"
-                            data-setbg="{{ asset('themes/ashion//img/categories/category-5.jpg') }}">
-                            <div class="categories__text">
-                                <h4>Accessories</h4>
-                                <p>792 items</p>
-                                <a href="#">Shop now</a>
-                            </div>
-                        </div>
-                    </div>
+                    </div> 
+                    @endforeach
+
                 </div>
             </div>
         </div>
