@@ -7,7 +7,7 @@ services:
       context: .
       dockerfile: Dockerfile
     image: cloudsigma.com/php
-    container_name: laravel-ecommerce-example
+    container_name: laravel-ecommerce-app
     restart: unless-stopped
     tty: true
     environment:
@@ -18,12 +18,12 @@ services:
       - ./:/var/www/html/
       - ./php/laravel.ini:/usr/local/etc/php/conf.d/laravel.ini
     networks:
-      - app-network 
+      - app-network   
 
   #Nginx Service
   webserver:
     image: nginx:alpine
-    # container_name: webserver
+    container_name: laravel-ecommerce-webserver
     restart: unless-stopped
     tty: true
     ports:
@@ -38,21 +38,23 @@ services:
   #MySQL Service
   db:
     image: mysql:5.7.32
-    # container_name: db
+    container_name: laravel-ecommerce-db
     restart: unless-stopped
     tty: true
     ports:
       - "3306:3306"
     environment:
-      MYSQL_DATABASE: laravel_web
-      MYSQL_ROOT_PASSWORD: replace_mysql_root_password
-      SERVICE_TAGS: dev
-      SERVICE_NAME: mysql
+      MYSQL_DATABASE: "db_laravel"
+      MYSQL_ROOT_PASSWORD: "password"
+      MYSQL_USER: "admin" 
+      MYSQL_PASSWORD: "password"
+      SERVICE_TAGS: "dev"
+      SERVICE_NAME: "mysql"
     volumes:
       - dbdata:/var/lib/mysql/
       - ./mysql/my.cnf:/etc/mysql/my.cnf
     networks:
-      - app-network
+      - app-network 
 
 #Docker Networks
 networks:
