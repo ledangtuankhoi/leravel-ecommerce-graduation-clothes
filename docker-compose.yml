@@ -1,8 +1,6 @@
 version: '2.0'
 services:
 
-  
-
   #Nginx Service
   webserver:
     image: nginx:alpine
@@ -17,7 +15,6 @@ services:
       - ./nginx/conf.d/:/etc/nginx/conf.d/
     networks:
       - app-network
-
   #MySQL Service
   db:
     image: mysql:5.7.32
@@ -55,7 +52,8 @@ services:
       - ./:/var/www/html/
       - ./php/laravel.ini:/usr/local/etc/php/conf.d/laravel.ini
     networks:
-      - app-network    
+      - app-network     
+
 #Docker Networks
 networks:
   app-network:
