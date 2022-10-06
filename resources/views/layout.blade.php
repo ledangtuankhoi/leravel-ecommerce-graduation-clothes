@@ -1,3 +1,5 @@
+        <!-- layout of source -->
+
 <!doctype html>
 <html lang="{{ app()->getLocale() }}">
     <head>

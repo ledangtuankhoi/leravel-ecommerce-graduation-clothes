@@ -21,6 +21,15 @@ class BlockPagesTableSeeder extends Seeder
                 serialize([0,1,2,3,4,5]),
                 'description' => 'description',
                 'status' => true
+            ],
+            [
+                'title' => 'landing-page-new-product',
+                'slug' => 'landing-page-new-product',
+                'config-content' =>
+                // "['laptops','desktops','mobile','tablets','tvs']", 
+                serialize([0,1,2,3,4]),
+                'description' => 'description',
+                'status' => true
             ]
         );
     }

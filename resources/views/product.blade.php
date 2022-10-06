@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="{{ asset('css/algolia.css') }}">
 @endsection
 
+    <!-- Shop blade tuankhoi -->
+
 @section('content')
 
     @component('components.breadcrumbs')
