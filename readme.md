@@ -8,16 +8,16 @@ Website Demo: [https://laravelecommerceexample.ca](https://laravelecommerceexamp
 
 ## Installation
 ### đối với docker thì phải exce vào app container
-1. composer require qirolab/laravel-themer:*
-1. php artisan vendor:publish --provider="Qirolab\Theme\ThemeServiceProvider" --tag="config"
-1. composer install
-1. php artisan key:generate
-1. rm -r public/storage
-1. php artisan ecommerce:install
-1. php artisan voyager:install
-1. npm install
-1. npm run dev
-1. php -v
+1. `composer require qirolab/laravel-themer:*`
+1. `php artisan vendor:publish --provider="Qirolab\Theme\ThemeServiceProvider" `--tag="config"
+1. `composer install`
+1. `php artisan key:generate`
+1. `rm -r public/storage`
+1. `php artisan ecommerce:install`
+1. `php artisan voyager:install`
+1. `npm install`
+1. `npm run dev`
+1. `php -v`
 
 ### cloen git hub
 1. Clone the repo and `cd` into it

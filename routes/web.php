@@ -62,8 +62,8 @@ Route::group(['middleware' => 'theme:ashion', 'prefix' => 'test-theme'], functio
     // "admin-theme" will be applied to all routes defined here
 
     // route test function
-    Route::get('/test/function_get', 'MenuController@NewProductByCategoryAuto')->name('test-function-get');
-    Route::post('/test_function_post', 'MenuController@NewProductByCategoryAuto')->name('test-function-post');
+    Route::get('/test/function_get', 'BlockPageController@NewProductByCategoryCustomize')->name('test-function-get');
+    Route::post('/test_function_post', 'BlockPageController@NewProductByCategoryAuto')->name('test-function-post');
 
     Route::get('/', 'LandingPageController@index')->name('landing-page');
 
