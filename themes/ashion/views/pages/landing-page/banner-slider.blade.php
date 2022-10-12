@@ -1,7 +1,10 @@
 @php
     $dataBanners = App\Http\Controllers\BlockPageController::BannerSlider();
+    // dump($dataBanners);
 @endphp
 
+@if ($dataBanners)
+    
     <section class="banner set-bg" data-setbg="{{ productImage($dataBanners['image']['image_background']) }}">
         <div class="container">
             <div class="row">
@@ -64,3 +67,4 @@
             </div>
         </div>
     </section>
+@endif

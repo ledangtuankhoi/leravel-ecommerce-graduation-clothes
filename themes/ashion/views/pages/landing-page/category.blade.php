@@ -3,6 +3,8 @@
 // error_log($cates);
 @endphp 
 
+@if ($categories)
+    
  <section class="categories">
     <div class="container-fluid">
         <div class="row">
@@ -37,3 +39,4 @@
         </div>
     </div>
 </section>
+@endif

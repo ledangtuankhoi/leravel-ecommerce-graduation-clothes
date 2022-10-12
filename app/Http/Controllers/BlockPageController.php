@@ -32,6 +32,16 @@ class BlockPageController extends Controller
         //        get id category of config table
         $categoriesIdConfig = (array)unserialize(BlockPage::pluck('config-content')->toArray()[0]);
 
+        $categoriesIdConfig = BlockPage::select('config-content')
+        ->where('status',1)
+        ->where('slug', 'landing-page-category')
+        ->get()->toArray();
+        if(!$categoriesIdConfig || count($categoriesIdConfig) === 0){
+            return null;
+        }
+        
+        $categoriesIdConfig = (array)unserialize($categoriesIdConfig[0]['config-content']); 
+
         $categories = Category::whereIn('id', $categoriesIdConfig)->with('products')->get();
         $categoriesArray = $categories->toArray();
         $productItemsCount = [];
@@ -86,9 +96,16 @@ class BlockPageController extends Controller
         // $piriority = 'customize' 
 
         // data sample 
+        $dataId = BlockPage::select('config-content')
+            ->where('status', 1)
+            ->where('slug', 'landing-page-new-product')
+            ->get()->toArray();
+        if (!$dataId && count($dataId) === 0) {
+            return null;
+        }
 
-        $dataId = (array)unserialize(BlockPage::select('config-content')->where('slug', 'landing-page-new-product')->get()->toArray()[0]['config-content']);
-
+        $dataId = (array)unserialize($dataId[0]['config-content']);
+         
         foreach ($dataId as $key => $value) {
 
             // find the category with id
@@ -182,8 +199,17 @@ class BlockPageController extends Controller
      */
     public static function BannerSlider()
     {
-        $dataId = (array)unserialize(BlockPage::select('config-content')->where('slug', 'landing-page-banners-slider')->get()->toArray()[0]['config-content']);
-        
-        return $dataId;
+        $dataId = BlockPage::select('config-content')
+            ->where('status', 1)
+            ->where('slug', 'landing-page-banners-slider')
+            ->get()->toArray();
+        if (!$dataId || count($dataId)===0) {
+            return null;
+        }
+
+        if ($dataId) {
+            $dataId = (array)unserialize($dataId[0]['config-content']);
+            return $dataId;
+        }
     }
 }

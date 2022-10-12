@@ -1,7 +1,7 @@
 <?php
-    $newProductByCategory = App\Http\Controllers\BlockPageController::NewProductByCategory(); 
- 
-?>    
+$newProductByCategory = App\Http\Controllers\BlockPageController::NewProductByCategory(); ?> 
+@if ($newProductByCategory)
+    
     <section class="product spad">
         <div class="container">
             <div class="row">
@@ -314,3 +314,4 @@
             </div>
         </div>
     </section>
+@endif   
