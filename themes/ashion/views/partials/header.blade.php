@@ -1,4 +1,6 @@
- 
+@php
+$categories = App\Http\Controllers\BlockPageController::BlockCategory(); 
+@endphp 
 <header class="header">
     <div class="container-fluid">
         <div class="row">

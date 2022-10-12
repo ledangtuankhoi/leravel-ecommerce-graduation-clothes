@@ -1,3 +1,4 @@
+
 <!-- layout of theme -->
 
 <!doctype html>
@@ -11,7 +12,7 @@
         <meta name="keywords" content="Ashion, unica, creative, html">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Laravel Ecommerce | @yield('title', '')</title>
+        <title>@yield('title', '') | Laravel Ecommerce  </title>
     
         <!-- Google Font -->
         <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
@@ -33,21 +34,10 @@
 
 
 <body class="@yield('body-class', '')"> 
-    <!-- Header Section Begin -->
-    @include('partials.header')
-    <!-- Header Section End -->
 
     <!-- Content Section begin -->
     @yield('content')
     <!-- Content Section End -->
-
-    <!-- Footer Section Begin -->
-    @include('partials.footer')
-    <!-- Footer Section End -->
-    
-    <!-- Search Begin -->
-    @include('partials.search')
-    <!-- Search End -->
 
     @yield('extra-js')
 

@@ -13,8 +13,8 @@ use Illuminate\Support\Facades\DB;
 
 class BlockPageController extends Controller
 {
-    protected $HIDDEN_COLUMNS = ['id','created_at','updated_at','description','images','featured'];
- 
+    protected $HIDDEN_COLUMNS = ['id', 'created_at', 'updated_at', 'description', 'images', 'featured'];
+
     /**
      * Display a listing of the resource.
      *
@@ -87,35 +87,35 @@ class BlockPageController extends Controller
 
         // data sample 
 
-        $dataId = (array)unserialize(BlockPage::select('config-content')->where('slug','landing-page-new-product')->get()->toArray()[0]['config-content']);
+        $dataId = (array)unserialize(BlockPage::select('config-content')->where('slug', 'landing-page-new-product')->get()->toArray()[0]['config-content']);
 
         foreach ($dataId as $key => $value) {
 
             // find the category with id
             $category = Category::findOrFail($value['category_id']);
             $productCustomize = [];
-            if(!$category){
+            if (!$category) {
                 return 'not data or error somthing';
             }
             // push data to array 
-            $categoiesSortByNewProductUpdate[$key]["category"] = 
-            [
-                // "id" => $category->toArray()['id'],
-                "name"=>$category->toArray()['name'],
-                "slug"=>$category->toArray()['slug']
-            ];
+            $categoiesSortByNewProductUpdate[$key]["category"] =
+                [
+                    // "id" => $category->toArray()['id'],
+                    "name" => $category->toArray()['name'],
+                    "slug" => $category->toArray()['slug']
+                ];
 
             // find product
             // where in product and category
             $productCustomize = Product::findOrFail($value['products'])
-            ->makeHidden(['id','created_at','updated_at','description','images','featured'])
-            ->toArray();
+                ->makeHidden(['id', 'created_at', 'updated_at', 'description', 'images', 'featured'])
+                ->toArray();
 
             // NOT OPTIMAL: use for loop is so lost time for query results
             // foreach($products as $product) {
             //     $productCustomize = $product->categories()->where('category_id', $value['category_id'])->get()->toArray();
             // }
-            
+
             // NOT IMPLEMENTED: 
             // - query builder: relationship in advanced query 
             // - subquery ELO: not where advanced query
@@ -124,8 +124,8 @@ class BlockPageController extends Controller
             // ->where(function($query){
             //     $query->categories()->where('category_id','1');
             // })->get();
-    
-            if(!$productCustomize){
+
+            if (!$productCustomize) {
                 return 'not data or error somthing';
             }
 
@@ -144,16 +144,17 @@ class BlockPageController extends Controller
         // view product table with sort 
         // $produtSortCreated = DB::table('products')->orderBy('created_at', 'desc')->get();
         // $produtSortCreated_1 = Product::get()[0]->categories()->get();
- 
+
         return $categoiesSortByNewProductUpdate;
     }
 
-    public static function NewProductByCategory(){
+    public static function NewProductByCategory()
+    {
 
-        $active =  BlockPage::where('slug','landing-page-new-product')->where('status',1);
-        if($active){
+        $active =  BlockPage::where('slug', 'landing-page-new-product')->where('status', 1);
+        if ($active) {
             return BlockPageController::NewProductByCategoryCustomize();
-        }else{
+        } else {
             return BlockPageController::NewProductByCategoryAuto();
         }
     }
@@ -171,5 +172,18 @@ class BlockPageController extends Controller
     public static function NewProductByCategoryAuto()
     {
         return [];
+    }
+
+
+    /**
+     * Banner silider 
+     *
+     * @return array
+     */
+    public static function BannerSlider()
+    {
+        $dataId = (array)unserialize(BlockPage::select('config-content')->where('slug', 'landing-page-banners-slider')->get()->toArray()[0]['config-content']);
+        
+        return $dataId;
     }
 }
