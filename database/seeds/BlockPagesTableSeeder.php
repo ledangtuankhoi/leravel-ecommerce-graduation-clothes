@@ -9,7 +9,7 @@ class BlockPagesTableSeeder extends Seeder
     protected $dataSample_landing_page_new_product =
     [
         "0" => [
-            "category_id" => 6  ,
+            "category_id" => 6,
             "products" => [67, 68]
         ],
         "1" => [
@@ -18,11 +18,11 @@ class BlockPagesTableSeeder extends Seeder
         ],
         "2" => [
             "category_id" => 2,
-            "products" => [31,32]
+            "products" => [31, 32]
         ],
         "3" => [
             "category_id" => 3,
-            "products" => [40,41]
+            "products" => [40, 41]
         ],
         "4" => [
             "category_id" => 4,
@@ -32,32 +32,48 @@ class BlockPagesTableSeeder extends Seeder
 
 
     protected $dataSample_landing_page_banners_slider = [
-            'captions' => [
-                0 => [
-                    'title' => 'public static function BannerSlider()',
-                    'link_shop' => 'http://localhost/test-theme/shop?c=desktops'
-                ],
-                2 => [
-                    'title' => 'public static function BannerSlider()',
-                    'link_shop' => 'http://localhost/test-theme/shop?c=desktops'
-                ],
-                3 => [
-                    'title' => 'public static function BannerSlider()',
-                    'link_shop' => 'http://localhost/test-theme/shop?c=desktops'
-                ],
-                4 => [
-                    'title' => 'public static function BannerSlider()',
-                    'link_shop' => 'http://localhost/test-theme/shop?c=desktops'
-                ]
+        'captions' => [
+            0 => [
+                'title' => 'public static function BannerSlider()',
+                'link_shop' => 'http://localhost/test-theme/shop?c=desktops'
             ],
-            'image' => [
-                'image_left' => '',
-                'image_right' => '',
-                'image_background' => 'banners/dummy/banner-1.jpg'
+            2 => [
+                'title' => 'public static function BannerSlider()',
+                'link_shop' => 'http://localhost/test-theme/shop?c=desktops'
+            ],
+            3 => [
+                'title' => 'public static function BannerSlider()',
+                'link_shop' => 'http://localhost/test-theme/shop?c=desktops'
+            ],
+            4 => [
+                'title' => 'public static function BannerSlider()',
+                'link_shop' => 'http://localhost/test-theme/shop?c=desktops'
             ]
+        ],
+        'image' => [
+            'image_left' => '',
+            'image_right' => '',
+            'image_background' => 'banners/dummy/banner-1.jpg'
+        ]
 
-        ];
-
+    ];
+    protected $dataSample_landing_page_trend = [
+        "hot_trend" => [
+            0 => 1,
+            1 => 2,
+            2 => 4
+        ],
+        "best_seller" => [
+            0 => 1,
+            1 => 2,
+            2 => 4
+        ],
+        "feature" => [
+            0 => 1,
+            1 => 2,
+            2 => 4
+        ]
+    ];
     /**
      * Run the database seeds.
      *
@@ -67,7 +83,7 @@ class BlockPagesTableSeeder extends Seeder
     {
         BlockPage::create(
             [
-                'title' => 'landing-page-category',
+                'title' => ucfirst('landing page category'),
                 'slug' => 'landing-page-category',
                 'config-content' =>
                 // "['laptops','desktops','mobile','tablets','tvs']", 
@@ -91,6 +107,16 @@ class BlockPagesTableSeeder extends Seeder
                 'config-content' =>
                 // "['laptops','desktops','mobile','tablets','tvs']", 
                 serialize($this->dataSample_landing_page_banners_slider),
+                'description' => 'description',
+                'status' => true
+            ],
+
+            [
+                'title' => 'landing-page-trend',
+                'slug' => 'landing-page-trend',
+                'config-content' =>
+                // "['laptops','desktops','mobile','tablets','tvs']", 
+                serialize($this->dataSample_landing_page_trend),
                 'description' => 'description',
                 'status' => true
             ]
