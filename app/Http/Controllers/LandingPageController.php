@@ -7,6 +7,8 @@ use App\Category;
 use App\OrderProduct;
 use App\CategoryProduct;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
+use Qirolab\Theme\Theme;
 
 class LandingPageController extends Controller
 {
@@ -21,8 +23,7 @@ class LandingPageController extends Controller
     {
         $products = Product::where('featured', true)->take(8)->inRandomOrder()->get();
         $categories = Category::all();
-
-
+ 
         return view('landing-page')->with(
             [
                 'products' => $products,

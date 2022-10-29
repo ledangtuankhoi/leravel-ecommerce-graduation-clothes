@@ -1,6 +1,11 @@
 <?php
 
+use Illuminate\Support\Facades\Log;
 use Qirolab\Theme\Theme;
+
+
+// Log::debug(json_encode([__METHOD__,"theme:active()", Theme::active()])); 
+
 
 return [
     /*
@@ -11,7 +16,7 @@ return [
     | It will assign the default active theme to be used if one is not set during
     | runtime.
     */
-    'active' => 'ashion',
+    'active' => null,
 
     /*
     |--------------------------------------------------------------------------

@@ -7,15 +7,28 @@ use Qirolab\Theme\Theme;
 
 class TestController extends Controller
 {
-    //
-    public function test1(){
+    public function clear()
+    {
+
         Theme::clear();
-        return Theme::active();
+        return dump([
+            Theme::active(),
+
+            Theme::parent(), 
+
+            Theme::getViewPaths(),
+        ]);
     }
 
-    public function test2(){
-        Theme::set('ashion');
-        return Theme::active();
+    public function settheme($theme)
+    {
+        Theme::set((string)$theme);
+        return dump([ 
+            Theme::active(),
+
+            Theme::parent(),  
+
+            Theme::getViewPaths(),
+        ]);
     }
-    
 }
