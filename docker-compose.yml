@@ -18,7 +18,7 @@ services:
   #MySQL Service
   db:
     image: mysql:5.7.32
-    container_name: laravel-ecommerce-db
+    container_name: laravel-ecommerce-db 
     restart: unless-stopped
     tty: true
     ports:
@@ -31,8 +31,9 @@ services:
       SERVICE_TAGS: "dev"
       SERVICE_NAME: "mysql"
     volumes:
-      - dbdata:/var/lib/mysql/
+      - ./mysql/dbdata:/var/lib/mysql/
       - ./mysql/my.cnf:/etc/mysql/my.cnf
+      - ./mysql/general.log:/var/lib/mysql/general.log
     networks:
       - app-network
   #PHP Service

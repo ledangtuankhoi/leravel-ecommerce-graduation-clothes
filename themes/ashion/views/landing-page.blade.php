@@ -4,6 +4,8 @@
 @section('title', 'Products')
 
 
+ 
+
 <!-- Header Section Begin -->
 @include('partials.header')
 <!-- Header Section End -->
@@ -26,7 +28,7 @@
 @include('pages.landing-page.trend')
 <!-- Trend Section End -->
 
-//TODO: coupon for product
+{{-- //TODO: coupon for product --}}
 {{--
     discount for category product
     shop
@@ -113,7 +115,7 @@
 </section>
 <!-- Services Section End -->
 
-// TODO: instagram API shop get image
+{{-- // TODO: instagram API shop get image --}}
 <!-- Instagram Begin -->
 @include('pages.landing-page.instagram')
 <!-- Instagram End -->

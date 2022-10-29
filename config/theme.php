@@ -1,5 +1,7 @@
 <?php
 
+use Qirolab\Theme\Theme;
+
 return [
     /*
     |--------------------------------------------------------------------------
@@ -9,7 +11,7 @@ return [
     | It will assign the default active theme to be used if one is not set during
     | runtime.
     */
-    'active' => null,
+    'active' => 'ashion',
 
     /*
     |--------------------------------------------------------------------------
