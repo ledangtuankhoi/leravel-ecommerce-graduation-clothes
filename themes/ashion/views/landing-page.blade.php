@@ -3,8 +3,48 @@
 
 @section('title', 'Products')
 
+@section('extra-css')
+<style>
+    <style>.categories__accordion .card-heading a:after {
+        content: none;
+    }
 
- 
+    .categories__accordion .card-heading a {
+        color: #818181;
+    }
+
+    .categories__accordion .card-heading.active a:after {
+        content: none;
+    }
+
+    .categories__accordion .card-heading.active a {
+        color: black;
+        text-decoration: underline;
+        text-decoration-color: red;
+        text-decoration-thickness: 2px;
+    }
+
+    .product__item__pic.set-bg {
+        background-position: center center;
+        background-size: contain;
+    }
+
+    .product__item {
+        margin-bottom: 35px;
+        border-color: #dfdddd;
+        border-style: solid;
+        border-width: 2px;
+        border-radius: 10px;
+        box-shadow: 10px 10px lightblue;
+    }
+
+    .product__hover li a span {
+        line-height: unset;
+    }
+</style>
+</style>
+@endsection
+
 
 <!-- Header Section Begin -->
 @include('partials.header')
@@ -30,11 +70,11 @@
 
 {{-- //TODO: coupon for product --}}
 {{--
-    discount for category product
-    shop
-    category product
-    group product
-    special product
+discount for category product
+shop
+category product
+group product
+special product
 --}}
 <!-- Discount Section Begin -->
 <section class="discount">
