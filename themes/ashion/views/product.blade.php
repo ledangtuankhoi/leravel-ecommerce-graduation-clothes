@@ -52,9 +52,9 @@
 @section('content')
 
 @component('components.breadcrumbs')
-<a href="./index.html"><i class="fa fa-home"></i> Home</a>
-<a href="#">Women’s </a>
-<span>Essential structured blazer</span>
+<a href="/"><i class="fa fa-home"></i> Home</a>
+<a href="{{ route('shop.index') }}">Shop </a>
+<span>{{ $product->name }}</span>
 @endcomponent
 
 
@@ -119,7 +119,6 @@
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star"></i> --}}
                         {{-- <span>( 138 reviews )</span> --}}
-                        {!! $stockLevel !!}
                     </div>
                     <div class="product__details__price">
                         {{ $product->presentPrice() }}
@@ -154,13 +153,14 @@
                                 <div class="stock__checkbox">
                                     <label for="stockin">
                                         In Stock
-                                        <input type="checkbox" id="stockin">
+                                        
+                                        <input type="checkbox" id="stockin" {{$stockLevel? 'checked' : ''}}>
                                         <span class="checkmark"></span>
                                     </label>
                                 </div>
                             </li>
                             <li>
-                                <span>Available color:</span>
+                                {{-- <span>Available color:</span>
                                 <div class="color__checkbox">
                                     <label for="red">
                                         <input type="radio" name="color__radio" id="red" checked>
@@ -174,10 +174,10 @@
                                         <input type="radio" name="color__radio" id="grey">
                                         <span class="checkmark grey-bg"></span>
                                     </label>
-                                </div>
+                                </div> --}}
                             </li>
                             <li>
-                                <span>Available size:</span>
+                                {{-- <span>Available size:</span>
                                 <div class="size__btn">
                                     <label for="xs-btn" class="active">
                                         <input type="radio" id="xs-btn">
@@ -195,11 +195,11 @@
                                         <input type="radio" id="l-btn">
                                         l
                                     </label>
-                                </div>
+                                </div> --}}
                             </li>
                             <li>
-                                <span>Promotions:</span>
-                                <p>Free shipping</p>
+                                {{-- <span>Promotions:</span>
+                                <p>Free shipping</p> --}}
                             </li>
                         </ul>
                     </div>
@@ -254,7 +254,7 @@
                 </div>
             </div>
         </div>
-    @include('partials.might-like')
+        @include('partials.might-like')
 
     </div>
 </section>
@@ -262,7 +262,7 @@
 
 {{-- // TODO: instagram API shop get image --}}
 <!-- Instagram Begin -->
-@include('pages.landing-page.instagram')
+{{-- @include('pages.landing-page.instagram') --}}
 <!-- Instagram End -->
 
 <!-- Footer Section Begin -->
