@@ -17,9 +17,29 @@ function setActiveCategory($category, $output = 'active')
     return request()->c == $category ? $output : '';
 }
 
+
+function setActive($data = '',$type = 'category', $output = 'active')
+{
+    switch ($type) {
+        case 'category':
+            # code...
+            return request()->c == $data ? $output : '';;
+            break;
+        case 'image':
+            // var_dump([request()]);die;
+            return $output;
+            break;
+        default:
+            # code...
+            return '';
+            break;
+    }
+    return request()->c == $data ? $output : '';
+}
+
 function productImage($path)
 {
-    return $path && file_exists('storage/'.$path) ? asset('storage/'.$path) : asset('img/not-found.jpg');
+    return $path && file_exists('storage/' . $path) ? asset('storage/' . $path) : asset('img/not-found.jpg');
 }
 
 function getNumbers()
@@ -55,4 +75,10 @@ function getStockLevel($quantity)
     }
 
     return $stockLevel;
+}
+
+function getNameImage($image)
+{
+
+    return pathinfo($image)['filename'];
 }
