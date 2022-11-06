@@ -46,6 +46,8 @@
     .product__hover li a span {
         line-height: unset;
     }
+
+    
 </style>
 @endsection
 

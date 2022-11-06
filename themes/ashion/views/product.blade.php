@@ -46,6 +46,19 @@
     .product__hover li a span {
         line-height: unset;
     }
+    
+    .product__hover li a {
+        background: #ffdede;
+    }
+
+    .product__hover {
+        bottom: 75px;
+    }
+
+    .product__item__text {
+        padding-top: unset;
+        margin-top: -45;
+    }
 </style>
 @endsection
 
@@ -141,10 +154,10 @@
                                     class="icon_bag_alt"></span> Add to cart</a>
                         </form>
                         @endif
-                        <ul>
+                        {{-- <ul>
                             <li><a href="#"><span class="icon_heart_alt"></span></a></li>
                             <li><a href="#"><span class="icon_adjust-horiz"></span></a></li>
-                        </ul>
+                        </ul> --}}
                     </div>
                     <div class="product__details__widget">
                         <ul>

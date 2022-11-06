@@ -30,6 +30,22 @@
         <link rel="stylesheet" href="{{ asset('themes/ashion/css/style.css') }}" type="text/css">
 
         @yield('extra-css')
+
+        <style>
+
+    .product__hover li a {
+        background: #ffdede;
+    }
+
+    .product__hover {
+        bottom: 75px;
+    }
+
+    .product__item__text {
+        padding-top: unset;
+        margin-top: -45;
+    }
+        </style>
     </head>
 
 
@@ -40,6 +56,17 @@
     <!-- Content Section End -->
 
     @yield('extra-js')
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function(event) { 
+            var scrollpos = localStorage.getItem('scrollpos');
+            if (scrollpos) window.scrollTo(0, scrollpos);
+        });
+
+        window.onbeforeunload = function(e) {
+            localStorage.setItem('scrollpos', window.scrollY);
+        };
+    </script>
 
      <!-- Js Plugins -->
      <script src="{{ asset('themes/ashion/js/jquery-3.3.1.min.js') }}"></script>
