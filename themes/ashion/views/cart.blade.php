@@ -47,7 +47,7 @@
         line-height: unset;
     }
 
-    .site-btn {
+    .site-btn .remove {
         font-size: 14px;
         color: #ffffff;
         background: #ca1515;
@@ -58,7 +58,6 @@
         padding: 0px 30px;
         border-radius: 10px 10px 50px 50px;
     }
-    
 </style>
 @endsection
 
@@ -226,7 +225,7 @@
                                     <form action="{{ route('coupon.destroy') }}" method="POST" style="display:block">
                                         {{ csrf_field() }}
                                         {{ method_field('delete') }}
-                                        <button type="submit" class="site-btn" style="font-size:14px;">Remove</button>
+                                        <button type="submit" class="site-btn remove" style="font-size:14px;">Remove</button>
                                     </form>
 
                                 </div>
@@ -243,8 +242,7 @@
                             New Subtotal
                             <span>&nbsp; {{ presentPrice($newSubtotal)}}</span>
                             @endif
-                        </li>
-                        </li>
+                        </li> 
                         <li>Tax({{config('cart.tax')}}%) <span>{{ presentPrice($newTax) }}</span></li>
                         <li>Total <span>{{ presentPrice($newTotal) }}</span></li>
                     </ul>
@@ -254,9 +252,9 @@
             {{-- END Cart tatol --}}
 
 
-            {{-- Saved for Later. --}} 
+            {{-- Saved for Later. --}}
             @if (Cart::instance('saveForLater')->count() > 0)
-            
+
             <div class="row" style="margin-top: 100px;">
                 <h2>{{ Cart::instance('saveForLater')->count() }} item(s) Saved For Later</h2>
                 <div class="col-lg-12">

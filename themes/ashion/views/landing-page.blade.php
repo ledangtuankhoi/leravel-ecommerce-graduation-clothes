@@ -5,7 +5,7 @@
 
 @section('extra-css')
 <style>
-    <style>.categories__accordion .card-heading a:after {
+    .categories__accordion .card-heading a:after {
         content: none;
     }
 
@@ -41,7 +41,19 @@
     .product__hover li a span {
         line-height: unset;
     }
-</style>
+
+    .product__hover li a {
+        background: #ffdede;
+    }
+
+    .product__hover {
+        bottom: 75px;
+    }
+
+    .product__item__text {
+        padding-top: unset;
+        margin-top: -45;
+    }
 </style>
 @endsection
 

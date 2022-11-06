@@ -37,7 +37,7 @@ class CartController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function store(Product $product)
+    public function store(Product $product, Request $request)
     {
         $duplicates = Cart::search(function ($cartItem, $rowId) use ($product) {
             return $cartItem->id === $product->id;
@@ -48,9 +48,8 @@ class CartController extends Controller
         }
 
         Cart::add($product->id, $product->name, 1, $product->price)
-            ->associate('App\Product');
-
-        return redirect()->route('cart.index')->with('success_message', 'Item was added to your cart!');
+            ->associate('App\Product'); 
+        return redirect(__(request()->headers->get('referer')))->with('success_message', 'Item was added to your cart!');
     }
 
     /**

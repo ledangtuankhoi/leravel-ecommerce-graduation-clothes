@@ -186,6 +186,9 @@
 
 @endsection
 
+@php
+    dump([requestget_defined_vars()]);
+@endphp
 @section('extra-js')
     <script src="https://js.braintreegateway.com/web/dropin/1.13.0/js/dropin.min.js"></script>
 
@@ -282,6 +285,7 @@
             // PayPal Stuff
             var form = document.querySelector('#paypal-payment-form');
             var client_token = "{{ $paypalToken }}";
+            console.info('asdf',client_token);
 
             braintree.dropin.create({
               authorization: client_token,
